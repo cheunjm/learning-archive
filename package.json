@@ -26,6 +26,8 @@
     "types": "graphql-to-typescript ./src/schema.graphql ./src/types/graph.d.ts"
   },
   "dependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "bcrypt": "^3.0.5",
     "class-validator": "^0.9.1",
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
