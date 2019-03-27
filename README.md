@@ -14,7 +14,7 @@ Uber Clone using GraphQL, NodeJS, Typescript
 
 ### Private Resolvers:
 
-- [ ] Generate JWT
+- [x] Generate JWT
 - [ ] Verify JWT
 - [ ] Verify Email
 - [ ] Get My Profile

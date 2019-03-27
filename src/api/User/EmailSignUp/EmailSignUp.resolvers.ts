@@ -5,6 +5,7 @@ import {
 
 import { Resolvers } from "../../../types/resolver";
 import User from "../../../entities/User";
+import createJWT from "../../../utils/createJWT";
 
 const resolvers: Resolvers = {
   Mutation: {
@@ -29,10 +30,11 @@ const resolvers: Resolvers = {
             ...args
           }).save();
 
+          const token = createJWT(newUser.id);
           return {
             ok: true,
             error: null,
-            token: "TODO"
+            token
           };
         }
       } catch (error) {

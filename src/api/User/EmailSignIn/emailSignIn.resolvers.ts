@@ -2,6 +2,7 @@ import { EmailSignInMutationArgs, EmailSignInResponse } from "src/types/graph";
 
 import { Resolvers } from "src/types/resolver";
 import User from "../../../entities/User";
+import createJWT from "../../../utils/createJWT";
 
 const resolvers: Resolvers = {
   Mutation: {
@@ -29,10 +30,11 @@ const resolvers: Resolvers = {
         const checkPassword = await user.comparePassword(password);
 
         if (checkPassword) {
+          const token = createJWT(user.id);
           return {
             ok: true,
             error: null,
-            token: "TBD"
+            token
           };
         } else {
           return {
