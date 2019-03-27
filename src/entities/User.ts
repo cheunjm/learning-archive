@@ -38,12 +38,12 @@ class User extends BaseEntity {
   lastName: string;
 
   @Column({ type: "int", nullable: true })
-  age: number | null;
+  age: number;
 
-  @Column({ type: "text" })
+  @Column({ type: "text", nullable: true })
   password: string;
 
-  @Column({ type: "text" })
+  @Column({ type: "text", nullable: true })
   phoneNumber: string;
 
   @Column({ type: "boolean", default: false })
@@ -70,6 +70,9 @@ class User extends BaseEntity {
   @Column({ type: "double precision", default: 0 })
   lastOrientation: number;
 
+  @Column({ type: "text", nullable: true })
+  fbId: string;
+
   @ManyToOne(type => Chat, chat => chat.participants)
   chat: Chat;
 
@@ -84,9 +87,6 @@ class User extends BaseEntity {
 
   @OneToMany(type => Ride, ride => ride.driver)
   ridesAsDriver: Ride[];
-
-  @Column({ type: "text", nullable: true })
-  fbId: string | null;
 
   @CreateDateColumn() createdAt: string;
 

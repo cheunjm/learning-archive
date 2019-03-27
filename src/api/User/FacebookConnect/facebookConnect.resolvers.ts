@@ -4,7 +4,7 @@ import {
 } from "src/types/graph";
 
 import { Resolvers } from "src/types/resolver";
-import User from "src/entities/User";
+import User from "../../../entities/User";
 
 const resolvers: Resolvers = {
   Mutation: {
@@ -13,14 +13,13 @@ const resolvers: Resolvers = {
       args: FacebookConnectMutationArgs
     ): Promise<FacebookConnectResponse> => {
       const { fbId } = args;
-      // Find user first
       try {
         const existingUser = await User.findOne({ fbId });
         if (existingUser) {
           return {
             ok: true,
             error: null,
-            token: "TBD"
+            token: "Coming soon, already"
           };
         }
       } catch (error) {
@@ -30,8 +29,6 @@ const resolvers: Resolvers = {
           token: null
         };
       }
-
-      // Create user
       try {
         await User.create({
           ...args,
@@ -40,7 +37,7 @@ const resolvers: Resolvers = {
         return {
           ok: true,
           error: null,
-          token: "TBD"
+          token: "Coming soon, created"
         };
       } catch (error) {
         return {
