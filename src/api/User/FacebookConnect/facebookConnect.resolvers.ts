@@ -33,6 +33,15 @@ const resolvers: Resolvers = {
 
       // Create user
       try {
+        await User.create({
+          ...args,
+          profilePhoto: `http://graph.facebook.com/${fbId}/picture?type=square`
+        }).save();
+        return {
+          ok: true,
+          error: null,
+          token: "TBD"
+        };
       } catch (error) {
         return {
           ok: false,
