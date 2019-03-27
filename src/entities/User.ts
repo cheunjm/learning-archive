@@ -85,6 +85,9 @@ class User extends BaseEntity {
   @OneToMany(type => Ride, ride => ride.driver)
   ridesAsDriver: Ride[];
 
+  @Column({ type: "string", nullable: true })
+  fbId: string;
+
   @CreateDateColumn() createdAt: string;
 
   @UpdateDateColumn() updatedAt: string;
