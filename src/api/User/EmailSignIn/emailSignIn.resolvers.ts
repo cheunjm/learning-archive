@@ -9,7 +9,7 @@ const resolvers: Resolvers = {
       _,
       args: EmailSignInMutationArgs
     ): Promise<EmailSignInResponse> => {
-      const { email } = args;
+      const { email, password } = args;
 
       // Check if email exists
       try {
@@ -24,6 +24,23 @@ const resolvers: Resolvers = {
             token: null
           };
         }
+
+        // Check if password is correcct
+        const checkPassword = await user.comparePassword(password);
+
+        if (checkPassword) {
+          return {
+            ok: true,
+            error: null,
+            token: "TBD"
+          };
+        } else {
+          return {
+            ok: false,
+            error: "Wrong Password",
+            token: null
+          };
+        }
       } catch (error) {
         return {
           ok: false,
@@ -31,8 +48,6 @@ const resolvers: Resolvers = {
           token: null
         };
       }
-
-      // Check if password is correcct
     }
   }
 };
