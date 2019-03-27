@@ -5,10 +5,11 @@ import {
 
 import { Resolvers } from "../../../types/resolver";
 import Verification from "../../../entities/Verification";
+import { sendVerificationSMS } from "../../../utils/sendSMS";
 
 const resolvers: Resolvers = {
   Mutation: {
-    StartPhoneVerifcation: async (
+    StartPhoneVerification: async (
       _,
       args: StartPhoneVerificationMutationArgs
     ): Promise<StartPhoneVerificationResponse> => {
@@ -28,6 +29,11 @@ const resolvers: Resolvers = {
         }).save();
 
         // Send SMS
+        await sendVerificationSMS(newVerification.payload, newVerification.key);
+        return {
+          ok: true,
+          error: null
+        };
       } catch (error) {
         return {
           ok: false,
