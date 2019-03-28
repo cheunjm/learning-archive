@@ -19,8 +19,8 @@ Uber Clone using GraphQL, NodeJS, Typescript
 
 ### Private Resolvers:
 
-- [ ] Verify Email
-- [ ] Get My Profile
+- [x] Verify Email
+- [x] Get My Profile
 - [ ] Update My Profile
 - [ ] Toggle Driving Mode
 - [ ] Report Location / orientation
