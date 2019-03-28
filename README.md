@@ -12,10 +12,13 @@ Uber Clone using GraphQL, NodeJS, Typescript
 - [x] Complete Phone Number Verification
 - [x] Sign Up with Email
 
-### Private Resolvers:
+### Authenticaton:
 
 - [x] Generate JWT
-- [ ] Verify JWT
+- [x] Verify JWT
+
+### Private Resolvers:
+
 - [ ] Verify Email
 - [ ] Get My Profile
 - [ ] Update My Profile
