@@ -22,7 +22,7 @@ Uber Clone using GraphQL, NodeJS, Typescript
 - [x] Get My Profile
 - [x] Request Email Verification
 - [x] Complete Email Verification
-- [ ] Update My Profile
+- [x] Update My Profile
 - [ ] Toggle Driving Mode
 - [ ] Report Location / orientation
 - [ ] Add Place
@@ -34,7 +34,9 @@ Uber Clone using GraphQL, NodeJS, Typescript
 - [ ] Get Nearby Rides
 - [ ] Subscribe to Nearby Ride Requests
 - [ ] Subscribe to Ride Status
-- [ ] Get Chat e to Chat Room Messages
+- [ ] Create a Chat Room
+- [ ] Get Chat Room Messages
+- [ ] Subscribe to Chat Room Messages
 - [ ] Send a Chat Message
 
 ## Optional
