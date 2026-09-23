@@ -1,0 +1,9 @@
+type GetMyProfleResponse {
+  ok: Boolean!
+  error: String
+  user: User
+}
+
+type Query {
+  GetMyProfile: GetMyProfleResponse!
+}
